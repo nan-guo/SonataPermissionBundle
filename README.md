@@ -7,7 +7,7 @@ This bundle provides a friendly view to display roles administration.
 - SonataUserBundle
 
 # Screenshots
-Check out the [screenshot](http://gitlab.dev-prodigious.com:9090/prodigious/SonataMenuBundle/tree/master/Resources/public/imgs).
+Check out the [screenshot](https://github.com/nan-guo/SonataPermissionBundle).
 
 # Installation
 
