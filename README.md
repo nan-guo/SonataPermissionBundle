@@ -7,7 +7,14 @@ This bundle provides a friendly view to display roles administration.
 - SonataUserBundle
 
 # Screenshots
-Check out the [screenshot](https://github.com/nan-guo/SonataPermissionBundle).
+
+![screenshot](https://github.com/nan-guo/SonataPermissionBundle/blob/master/Resources/public/imgs/screenshot-1.png)
+
+![screenshot](https://github.com/nan-guo/SonataPermissionBundle/blob/master/Resources/public/imgs/screenshot-2.png)
+
+![screenshot](https://github.com/nan-guo/SonataPermissionBundle/blob/master/Resources/public/imgs/screenshot-3.png)
+
+![screenshot](https://github.com/nan-guo/SonataPermissionBundle/blob/master/Resources/public/imgs/screenshot-4.png)
 
 # Installation
 
