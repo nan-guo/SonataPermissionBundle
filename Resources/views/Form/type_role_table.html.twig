@@ -1,0 +1,17 @@
+{% if item.permissions|length > 0 %}
+{% for label, permission in  item.permissions %}
+<tr class="row-type-role">
+    <td>
+        <div class="checkbox">
+            <label class="label-type-role">
+                <span class="control-label__text span-type-role">{{ label }}</span>
+                <input name="{{ full_name }}[]" class="" type="checkbox" value="{{ permission }}" 
+                {% if permission in selected_choices or permission in default_roles%} checked {% endif %}
+                {% if permission in default_roles  %} readonly disabled {% endif %} 
+                />
+            </label>
+        </div>                                        
+    </td>
+</tr>
+{% endfor %}
+{% endif %}

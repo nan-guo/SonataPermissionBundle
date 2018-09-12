@@ -1,0 +1,18 @@
+services:
+
+    prodigious_sonata_permission.editable_role_builder:
+        class: Prodigious\Sonata\PermissionBundle\Security\EditableRolesBuilder
+        arguments: ['@security.token_storage', '@security.authorization_checker', '@sonata.admin.pool', '@translator']
+
+    prodigious_sonata_permission.form.type.security_roles:
+        class: Prodigious\Sonata\PermissionBundle\Form\Type\SecurityRolesType
+        tags:
+            - { name: form.type, alias: prodigious_sonata_security_roles }
+        arguments: ['@prodigious_sonata_permission.editable_role_builder']
+
+    prodigious_sonata_permission.admin.extension:
+        class: Prodigious\Sonata\PermissionBundle\Admin\Extension\ProdigiousSonataPermissionAdminExtension
+        autowire: true
+        tags:
+            - { name: sonata.admin.extension, target: sonata.user.admin.user }
+            - { name: sonata.admin.extension, target: sonata.user.admin.group }

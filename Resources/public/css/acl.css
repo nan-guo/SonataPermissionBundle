@@ -1,0 +1,17 @@
+.bl {
+    display: block;
+}
+
+.row-type-role {
+    float: left;
+    text-align: center;
+}
+
+.label-type-role {
+    padding-left: 0 !important;
+}
+
+.span-type-role {
+    display: inline-block;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,38 @@
+{% if allowed_permissions|length > 0 and display == true %}
+<tr>
+    <th class="sonata-ba-list-field-header-text"> {{ 'prodigious.label_modules'|trans({}, 'ProdigiousSonataPermissionBundle') }}</th>
+    {% for permission in allowed_permissions %}
+    <th class="sonata-ba-list-field-header-text"> {{ permission }}</th>
+    {% endfor %}
+    <th class="sonata-ba-list-field-header-text"> {{ 'prodigious.label_all'|trans({}, 'ProdigiousSonataPermissionBundle') }}</th></th>
+</tr>
+{% endif %}
+<tr class="row-type-entity">
+    {% set counter = counter + 1 %}
+    <td class="sonata-ba-list-field sonata-ba-list-field-text">
+        <p>{{ name }}</p>
+    </td>
+    {% for allowed_permission in allowed_permissions %}
+    {% if allowed_permission in item.permissions|keys %}
+    <td class="sonata-ba-list-field sonata-ba-list-field-text">
+        <p class="siblings">          
+            <input name="{{ full_name }}[]" class="sonata_admin_global_module-{{ counter }}  module-permission-{{ counter }}" 
+            type="checkbox" value="{{ item.permissions[allowed_permission] }}" 
+            {% if item.permissions[allowed_permission] in selected_choices or item.permissions[allowed_permission] in default_roles  %} checked {% endif %} 
+            {% if item.permissions[allowed_permission] in default_roles  %} readonly disabled {% endif %} 
+            />
+        </p>
+    </td>
+    {% else %}
+    <td class="sonata-ba-list-field sonata-ba-list-field-text">
+        <p class="siblings">
+        </p>
+    </td>
+    {% endif %}
+    {% endfor %}
+    <td class="sonata-ba-list-field sonata-ba-list-field-text">
+        <p class="siblings">
+            <input type="checkbox" class="assign_permissions_for_a_module" id="sonata_admin_global_module-{{ counter }}"/>
+        </p>
+    </td>
+</tr>

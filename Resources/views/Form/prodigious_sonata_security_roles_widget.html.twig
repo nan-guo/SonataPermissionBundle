@@ -1,0 +1,39 @@
+{% block prodigious_sonata_security_roles_widget %}
+{% spaceless %}
+{% set counter = 0 %}
+<div class="editable">
+    <div id="tab-content" class="tab-content">
+
+        {% for role in roles %}
+            {% set display = true %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="collapse_ctrl bl" data-toggle="collapse" data-parent="#accordion_sonata_admin_global" href="#sonata_admin_global_collapse_one-{{ loop.index }}">{{ role.label }}</a>
+                    </h4>
+                </div>
+            </div>
+
+            <div id="sonata_admin_global_collapse_one-{{ loop.index }}" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <table class="roles-table table">
+                    {% for name, item in role.items %}
+                        {% if item.type == 'role' %}
+                        {% include 'ProdigiousSonataPermissionBundle:Form:type_role_table.html.twig' with {'item': item, 'default_roles': default_roles} %}
+                        {% elseif item.type == 'entity' %}
+                        {% set counter = counter + 1 %}
+                        {% include 'ProdigiousSonataPermissionBundle:Form:type_entity_table.html.twig' with {'name': name, 'item': item, 'default_roles': default_roles, 'allowed_permissions': allowed_permissions, 'display': display, 'counter': counter} %}
+                        {% set display = false %}
+                        {% endif %}
+                    {% endfor %}
+                    </table>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+</div>
+<link rel="stylesheet" href="{{ asset('/bundles/prodigioussonatapermission/css/acl.css') }}">
+<script type="text/javascript" src="{{ asset('/bundles/prodigioussonatapermission/js/acl.js') }}"></script>
+{% endspaceless %}
+{% endblock prodigious_sonata_security_roles_widget %}
