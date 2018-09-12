@@ -48,7 +48,7 @@ prodigious_sonata_permission:
                 - { type: entity, name: sonata.admin.category }
                 - { type: entity, name: sonata.admin.tag }
         media:
-            label:              Média
+            label:              Media
             translation_domain: ProdigiousSonataPermissionBundle
             items:
                 - { type: entity, name: sonata.media.admin.media }
