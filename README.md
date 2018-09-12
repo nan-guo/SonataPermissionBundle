@@ -20,7 +20,16 @@ Check out the [screenshot](https://github.com/nan-guo/SonataPermissionBundle).
 new Prodigious\Sonata\PermissionBundle\ProdigiousSonataPermissionBundle(),
 ```
 
-### config.yml or sonata_acl.yml
+### config.yml
+
+```
+twig:
+    form_themes:
+        - '@ProdigiousSonataPermission/Form/prodigious_sonata_security_roles_widget.html.twig'
+
+```
+
+### sonata_acl.yml
 
 Add permission list
 
