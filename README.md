@@ -27,6 +27,7 @@ This bundle provides a friendly view to display roles administration.
 # Installation
 
 ```
+composer require prodigious/sonata-permission-bundle
 ```
 
 # Configuration
