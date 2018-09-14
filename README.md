@@ -47,7 +47,20 @@ twig:
 
 ### sonata_acl.yml
 
-Add permission list
+#### Configuration:
+
+| Option                   |                                           Value                                           | Required |
+|--------------------------|:-----------------------------------------------------------------------------------------:|---------:|
+| default_roles            | type: array, default value : [] Default roles will be auto checked in the permission list |    false |
+| auto_replace_roles_field | type: bool, default value: true                                                           |    false |
+| groups                   | type: array                                                                               |     true |
+
+There are two types of view for items:
+
+--- Type role: display all permission in a list of checkbox, the parameter 'name' should be a role.
+--- Type entity: display all permission in a table with the permissions you have difine, the parameter 'name' should be a service admin of sonata, by defaut, the parameter permissions are { 'Create': 'CREATE', 'Edit': 'EDIT', 'List': 'LIST',  'View': 'VIEW', 'Delete': 'DELETE', 'Export': 'EXPORT' }
+
+#### Configuration example
 
 ```
 prodigious_sonata_permission:
