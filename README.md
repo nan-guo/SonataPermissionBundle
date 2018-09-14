@@ -57,8 +57,8 @@ twig:
 
 There are two types of view for items:
 
-#### --- Type role: display all permission in a list of checkbox, the parameter 'name' should be a role.
-#### --- Type entity: display all permission in a table with the permissions you have difine, the parameter 'name' should be a service admin of sonata, by defaut, the parameter permissions are { 'Create': 'CREATE', 'Edit': 'EDIT', 'List': 'LIST',  'View': 'VIEW', 'Delete': 'DELETE', 'Export': 'EXPORT' }
+- Type role: display all permission in a list of checkbox, the parameter 'name' should be a role.
+- Type entity: display all permission in a table with the permissions you have difine, the parameter 'name' should be a service admin of sonata, by defaut, the parameter permissions are { 'Create': 'CREATE', 'Edit': 'EDIT', 'List': 'LIST',  'View': 'VIEW', 'Delete': 'DELETE', 'Export': 'EXPORT' }
 
 #### Configuration example
 
