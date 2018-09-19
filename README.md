@@ -39,6 +39,10 @@ new Prodigious\Sonata\PermissionBundle\ProdigiousSonataPermissionBundle(),
 ### config.yml
 
 ```
+sonata_admin:
+    security:
+        handler: sonata.admin.security.handler.role
+
 twig:
     form_themes:
         - '@ProdigiousSonataPermission/Form/prodigious_sonata_security_roles_widget.html.twig'
