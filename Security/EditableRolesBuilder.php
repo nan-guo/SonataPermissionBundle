@@ -86,10 +86,11 @@ class EditableRolesBuilder
                             $nameFromServiceId = $this->getNameFromServiceId($item['name']);
                             foreach ($item['permissions'] as $permissionLabel => $permission) {
                                 $permissionLabel = is_integer($permissionLabel) ? $permission : $permissionLabel;
-                                $roles[$i]['items'][$label]['permissions'][ucfirst($permissionLabel)] = $nameFromServiceId.'_'.$permission;
+                                $roles[$i]['items'][$label]['permissions'][ucfirst($permissionLabel)] = 'ROLE_'.$nameFromServiceId.'_'.$permission;
                                 $roles[$i]['items'][$label]['type'] = $item['type'];
-                                $rolesList[] = $nameFromServiceId.'_'.$permission;
+                                $rolesList[] = 'ROLE_'.$nameFromServiceId.'_'.$permission;
                             }
+
                             break;
                         default:
                             break;
