@@ -34,6 +34,7 @@ class Configuration implements ConfigurationInterface
                         ->children()
                             ->scalarNode('label')->end()
                             ->scalarNode('translation_domain')->defaultValue('ProdigiousSonataPermissionBundle')->end()
+                            ->scalarNode('multiple_choice')->defaultValue(true)->end()
                             ->arrayNode('items')
                                 ->requiresAtLeastOneElement()
                                 ->prototype('array')

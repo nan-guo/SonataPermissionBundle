@@ -74,12 +74,14 @@ prodigious_sonata_permission:
         admin:
             label:              Admin Roles
             translation_domain: ProdigiousSonataPermissionBundle
+            multiple_choice: false # radio
             items:
                 - { type: role, name: ROLE_SUPER_ADMIN, label: ROLE_SUPER_ADMIN }
                 - { type: role, name: ROLE_ADMIN, label: ROLE_ADMIN }
         content:
             label:              Content
             translation_domain: ProdigiousSonataPermissionBundle
+            multiple_choice: true  # checkbox
             items:
                 - { type: entity, name: sonata.admin.news }
                 - { type: entity, name: sonata.admin.product, permissions: { 'Edit': 'EDIT', 'Delete': 'DELETE' } } // permissions est optionnal

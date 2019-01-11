@@ -17,7 +17,7 @@
     <td class="sonata-ba-list-field sonata-ba-list-field-text">
         <p class="siblings">          
             <input name="{{ full_name }}[]" class="sonata_admin_global_module-{{ counter }}  module-permission-{{ counter }}" 
-            type="checkbox" value="{{ item.permissions[allowed_permission] }}" 
+            type="{% if multiple_choice %}checkbox{% else %}radio{% endif %}" value="{{ item.permissions[allowed_permission] }}"
             {% if item.permissions[allowed_permission] in selected_choices or item.permissions[allowed_permission] in default_roles  %} checked {% endif %} 
             {% if item.permissions[allowed_permission] in default_roles  %} readonly disabled {% endif %} 
             />
@@ -32,7 +32,7 @@
     {% endfor %}
     <td class="sonata-ba-list-field sonata-ba-list-field-text">
         <p class="siblings">
-            <input type="checkbox" class="assign_permissions_for_a_module" id="sonata_admin_global_module-{{ counter }}"/>
+            <input type="{% if multiple_choice %}checkbox{% else %}radio{% endif %}" class="assign_permissions_for_a_module" id="sonata_admin_global_module-{{ counter }}"/>
         </p>
     </td>
 </tr>

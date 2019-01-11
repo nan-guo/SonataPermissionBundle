@@ -5,7 +5,7 @@
         <div class="checkbox">
             <label class="label-type-role">
                 <span class="control-label__text span-type-role">{{ label }}</span>
-                <input name="{{ full_name }}[]" class="" type="checkbox" value="{{ permission }}" 
+                <input name="{{ full_name }}[]" class="" type="{% if multiple_choice %}checkbox{% else %}radio{% endif %}" value="{{ permission }}"
                 {% if permission in selected_choices or permission in default_roles%} checked {% endif %}
                 {% if permission in default_roles  %} readonly disabled {% endif %} 
                 />

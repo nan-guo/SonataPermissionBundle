@@ -19,10 +19,10 @@
                     <table class="roles-table table">
                     {% for name, item in role.items %}
                         {% if item.type == 'role' %}
-                        {% include 'ProdigiousSonataPermissionBundle:Form:type_role_table.html.twig' with {'item': item, 'default_roles': default_roles} %}
+                        {% include 'ProdigiousSonataPermissionBundle:Form:type_role_table.html.twig' with {'item': item, 'default_roles': default_roles, 'multiple_choice': role.multiple_choice } %}
                         {% elseif item.type == 'entity' %}
                         {% set counter = counter + 1 %}
-                        {% include 'ProdigiousSonataPermissionBundle:Form:type_entity_table.html.twig' with {'name': name, 'item': item, 'default_roles': default_roles, 'allowed_permissions': allowed_permissions, 'display': display, 'counter': counter} %}
+                        {% include 'ProdigiousSonataPermissionBundle:Form:type_entity_table.html.twig' with {'name': name, 'item': item, 'default_roles': default_roles, 'allowed_permissions': allowed_permissions, 'display': display, 'counter': counter, 'multiple_choice': role.multiple_choice} %}
                         {% set display = false %}
                         {% endif %}
                     {% endfor %}

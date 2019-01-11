@@ -69,7 +69,7 @@ class EditableRolesBuilder
 
             foreach ($groups as $key => $group) {
                 $roles[$i]['label'] = $this->translator->trans($group['label'], [], $group['translation_domain']);
-
+                $roles[$i]['multiple_choice'] = $group['multiple_choice'];
                 foreach ($group['items'] as $item) {
                                         
                     switch ($item['type']) {
